@@ -11,9 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-.DS_Store
-node_modules
-dist/
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +22,6 @@ dist/
 *.njsproj
 *.sln
 *.sw?
+.DS_Store
+node_modules
+dist/
