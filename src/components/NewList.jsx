@@ -5,7 +5,7 @@ const NewList = (props) => {
     <div>
         <div className="pt-3">
             <ul className='text-xl'>
-                <li className=' rounded-md border-2 max-w-[250px]  ' onClick={props.deleteBody}>{props.listBody}</li>
+                <li className=' rounded-md border-2 border-gray-500 max-w-[250px]  ' onClick={props.deleteBody}>{props.listBody}</li>
                 
             </ul>
         </div>

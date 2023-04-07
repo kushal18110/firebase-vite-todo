@@ -8,7 +8,7 @@ const Auth = () => {
   const [menu, setMenu] = useState(false);
 
   const menuHandler = () => {
-    setMenu(true);
+    setMenu(!menu);
   };
   const closeHandler = () => {
     setMenu(false);
@@ -22,27 +22,27 @@ const Auth = () => {
     setMenu(false);
   };
   return (
-    <div className=" relative flex items-center  justify-end gap-2 ">
-      <div className=" absolute top-0 right-20">
-        {auth.currentUser ? auth.currentUser.displayName:null}
-      </div>
-      <div className=" absolute right-0 top-0">
-        <div className=" ">
+    <div className=" flex items-center gap-2 ">
+      
+      <div className="   right-0 top-0">
+        <div className="relative  ">
           {!menu ? (
-            <FcMenu className="" onClick={menuHandler} size={20}></FcMenu>
-          ) : (
-            <GrClose className="" onClick={closeHandler} />
-          )}
+            <FcMenu className="" onClick={menuHandler} size={25}></FcMenu>
+            ) : (
+              <GrClose className="" onClick={menuHandler} size={25}/>
+              )}
         </div>
         <div className="">
           {menu ? (
-            <div className="flex flex-col gap-2">
-              <button className=" border-b-2 pb-1" onClick={signInHandler}>
+            <div className="flex flex-col gap-2 absolute">
+              {auth.currentUser ? null : <button className=" border-b-2 pb-1" onClick={signInHandler}>
                 Sign In
-              </button>
+              </button>}
+              
               <button className="  border-b-2 pb-1" onClick={signOutHandler}>
                 Sign Out
               </button>
+              {auth.currentUser ? auth.currentUser.displayName:null}
             </div>
           ) : null}
         </div>

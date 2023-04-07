@@ -5,7 +5,6 @@ import MainList from './MainList'
 const Main = () => {
   return (
     <div>
-        <Auth/>
         <MainList/>
     </div>
   )
